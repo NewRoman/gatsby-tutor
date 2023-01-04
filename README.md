@@ -7,6 +7,8 @@
   Gatsby minimal starter
 </h1>
 
+<h2>What to do?</h2>
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
