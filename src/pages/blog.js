@@ -3,36 +3,39 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
+// imports
+
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My Blog Posts">
-      <ul>
       {
-        data.allFile.nodes.map(node => (
-          <li key={node.name}>
-            {node.name}
-          </li>
+        data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+          </article>
         ))
       }
-      </ul>
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allFile {
+    allMdx(sort: { frontmatter: { date: DESC }}) {
       nodes {
-        name
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+        }
+        id
+        excerpt(pruneLength: 30)
       }
     }
   }
 `
 
-export const Head = (props) => {
-  console.log('props', props)
-  return <Seo title="My Blog Posts" />
-}
-
+export const Head = () => <Seo title="My Blog Posts" />
 
 export default BlogPage
