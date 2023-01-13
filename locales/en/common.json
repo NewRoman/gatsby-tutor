@@ -1,9 +1,10 @@
+
 {
-  "aboutPageSeoTitle": "aboutPageSeoTitle",
+  "en": "English",
+  "uk": "Українська",
   "mainMenu": {
-    "about": "about",
-    "blog": "blog",
-    "home": "home"
-  },
-  "textPage": "textPage"
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog"
+  }
 }

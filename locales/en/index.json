@@ -1,4 +1,5 @@
 {
-  "homePageSeoTitle": "homePageSeoTitle",
-  "textPage": "textPage"
+    "homePageSeoTitle": "Home page title",
+    "homePageHeading": "Home page header",
+    "textPage": "I'm making this by following the Gatsby Tutorial."
 }

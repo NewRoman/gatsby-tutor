@@ -13,8 +13,7 @@ const BlogPage = ({ data }) => {
       <h3>
         {t('blogPostHeading')}
       </h3>
-      <p>{t('textPageBlog1')}</p>
-      <p>{t('textPageBlog2')}</p>
+      <p>{t('textPage')}</p>
       {/* {
         data.allMdx.nodes.map(node => (
           <article key={node.id}>
