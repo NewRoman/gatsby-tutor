@@ -1,5 +1,6 @@
 {
-    "blogPageSeoTitle": "Blogs list page",
-    "blogPostHeading": "My blogs",
-    "textPage": "Text for list blogs page"
+  "blogPageSeoTitle": "Blog Page Seo Title",
+  "blogPostHeading": "blogPostHeading",
+  "textPageBlog1": "textPageBlog1",
+  "textPageBlog2": "textPageBlog2"
 }

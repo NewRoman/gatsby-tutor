@@ -1,56 +1,55 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://dev.to/adrai/best-internationalization-for-gatsby-mkf#extract">
+    <img alt="implement translation extractor" src="https://i18next-extract.netlify.app/imgs/babel-plugin-i18next-extract.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Implementation of translatoins extraction
 </h1>
 
-<h2>What to do?</h2>
+<h2>Tips</h2>
 
-## 🚀 Quick start
+## 🚀 
 
-1.  **Create a Gatsby site.**
+1.  **Інсталювати пакет babel-plugin-i18next-extract та налаштувати його**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+    - [Інструкція з встановлення та налаштування](https://dev.to/adrai/best-internationalization-for-gatsby-mkf#extract)
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    # встановити плагін для вилучення ключів перекладів
+    npm install @babel/cli babel-plugin-i18next-extract
     ```
 
-3.  **Open the code and start customizing!**
+2.  **JSON файл з ключами перекладів генерується на основі усіх входжень функції t()(або компонента <Trans>можна налаштувати за допомогою customTransComponents, tFunctionNames, i18nextInstanceNames)**
 
-    Your site is now running at http://localhost:8000!
+    - [Налаштування плагіну](https://i18next-extract.netlify.app/#/configuration?id=configuration)
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+3.  **Якщо не налаштовувати namespaces для перекладів, то згенеруєтья один JSON файл для усіх знайдених входжень**
 
-4.  **Learn more**
+    Такий підхід швидший, але має ряд недоліків, оскільки, немає можливості налаштувати вибіркове завантаженя перекладів(лише ті які реально потрбіні на сторінці), файл може містити дуже велику кількість фраз і працювати з ним може бути не зручно
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+4.  **Налаштування namespace полягає в тому що потрібно за допомогою спеціальних коментарів для кожного файлу вказати до якого namespace мають належати усі ключі з поточного файлу**
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [Список спеціальних коментарів](https://i18next-extract.netlify.app/#/comment-hints?id=explicitly-use-a-namespace-for-a-key)
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+5.  **Якщо не вказувати коментар з значенням namespace то усі знайдені входження додадуться в JSON файл для дефолтного namespace(зазвичай common.json)**
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+6.  **Якщо коментар з значенням namespace в файлу вказаний, але відповідний JSON не існує, то плагін створить такий файл і додасть туди усі входження ключів перекладів з данного файлу**
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+7.  **Для того щоб згенерований JSON файл містив ключі з вже готовими фразами можна піти двома способами**
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - використовувати компонент <Trans> у вигляді. Нажаль, надмірно велика кількість компонентів може негативно впливати на швидкодію застосунку, тому є ще інший варіант
 
-## 🚀 Quick start (Gatsby Cloud)
+    ```shell
+    # все що між тегами <Trans></Trans> перенесеться в значення перекладу по даному ключу і ми отримаємо готові переклади для мови по замовчуванню
+    <Trans i18nKey="title">Hi people</Trans>
+    ```
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+    - інший варіант полягає в тому щоб в якості ключів в функції t() використовувати цілі готовві фрази
+   
+     ```shell
+    # "Hi people" перенесеться в значення перекладу по даному ключу і ми отримаємо готові переклади для мови по замовчуванню
+    t("Hi people")
+    ```
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+## 🚀 

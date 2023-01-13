@@ -1,3 +1,5 @@
+
+// i18next-extract-mark-ns-start common
 import * as React from 'react'
 import {Link, useTranslation} from 'gatsby-plugin-react-i18next';
 

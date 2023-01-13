@@ -1,3 +1,4 @@
+// i18next-extract-mark-ns-start common
 import * as React from 'react'
 import {Link, useI18next} from 'gatsby-plugin-react-i18next';
 
@@ -32,7 +33,8 @@ const Header = ({ pageTitle }) => {
             return (
               <li key={lang} className={languageListItem}>
                 <Link to={originalPath} language={lang} className={languageListItemLink}>
-                  {t(lang)}
+                  {/* {t(`${lang}`)} */}
+                  {lang}
                 </Link>
               </li>
             )

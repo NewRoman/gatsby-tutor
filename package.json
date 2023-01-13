@@ -12,9 +12,12 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "extract-one": "babel --config-file ./babel-extract.config.js -o tmp/chunk.js 'src/pages/index.{js,jsx}' && rm -rf tmp",
+    "extract": "babel --config-file ./babel-extract.config.js -o tmp/chunk.js 'src/**/*.{js,jsx}' && rm -rf tmp"
   },
   "dependencies": {
+    "@babel/cli": "^7.20.7",
     "@mdx-js/react": "^2.2.1",
     "gatsby": "^5.3.3",
     "gatsby-plugin-image": "^3.3.2",
@@ -27,5 +30,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.4"
+  },
+  "devDependencies": {
+    "babel-plugin-i18next-extract": "^0.9.0"
   }
 }

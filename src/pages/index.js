@@ -1,3 +1,4 @@
+// i18next-extract-mark-ns-start index
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -39,7 +40,6 @@ export const query = graphql`
 `;
 
 export default IndexPage
-
 
 
 // based on react-intl

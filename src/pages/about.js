@@ -1,3 +1,4 @@
+
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import {useTranslation} from 'gatsby-plugin-react-i18next';

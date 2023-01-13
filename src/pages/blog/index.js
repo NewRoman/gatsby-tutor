@@ -1,3 +1,4 @@
+// i18next-extract-mark-ns-start blog
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import {useTranslation, Link} from 'gatsby-plugin-react-i18next';
@@ -12,7 +13,8 @@ const BlogPage = ({ data }) => {
       <h3>
         {t('blogPostHeading')}
       </h3>
-      <p>{t('textPage')}</p>
+      <p>{t('textPageBlog1')}</p>
+      <p>{t('textPageBlog2')}</p>
       {/* {
         data.allMdx.nodes.map(node => (
           <article key={node.id}>
