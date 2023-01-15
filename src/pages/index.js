@@ -1,28 +1,28 @@
 // i18next-extract-mark-ns-start index
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import {useTranslation} from 'gatsby-plugin-react-i18next';
+import * as React from "react";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
-import Layout from '../layouts/layout'
-import Seo from '../components/seo'
+import Layout from "../layouts/layout";
+import Seo from "../components/seo";
 
 const IndexPage = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
-    <Layout pageTitle={t('homePageSeoTitle')}>
-      <p>{t('textPage')}</p>
+    <Layout pageTitle={t("homePageSeoTitle")}>
+      <p>{t("textPage")}</p>
       <StaticImage
         alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
         src="../images/clifford.jpg"
       />
     </Layout>
-  )
-}
+  );
+};
 
 export const Head = () => {
-  const {t} = useTranslation();
-  return <Seo title={t('homePageSeoTitle')} />;
+  const { t } = useTranslation();
+  return <Seo title={t("homePageSeoTitle")} />;
 };
 
 export const query = graphql`
@@ -39,7 +39,7 @@ export const query = graphql`
   } 
 `;
 
-export default IndexPage
+export default IndexPage;
 
 
 // based on react-intl

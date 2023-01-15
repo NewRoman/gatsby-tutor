@@ -1,20 +1,20 @@
 // i18next-extract-mark-ns-start blog
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import {useTranslation, Link} from 'gatsby-plugin-react-i18next';
+import * as React from "react";
+import { graphql } from "gatsby";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
-import Layout from '../../layouts/layout'
-import Seo from '../../components/seo'
+import Layout from "../../layouts/layout";
+import Seo from "../../components/seo";
 
 const BlogPage = ({ data }) => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   return (
-    <Layout pageTitle={t('blogPageSeoTitle')}>
+    <Layout pageTitle={t("blogPageSeoTitle")}>
       <h3>
-        {t('blogPostHeading')}
+        {t("blogPostHeading")}
       </h3>
-      <p>{t('textPageBlog1')}</p>
-      <p>{t('textPageBlog2')}</p>
+      <p>{t("textPageBlog1")}</p>
+      <p>{t("textPageBlog2")}</p>
       {/* {
         data.allMdx.nodes.map(node => (
           <article key={node.id}>
@@ -28,12 +28,12 @@ const BlogPage = ({ data }) => {
         ))
       } */}
     </Layout>
-  )
-}
+  );
+};
 
 export const Head = () => {
-  const {t} = useTranslation();
-  return <Seo title={t('blogPageSeoTitle')} />;
+  const { t } = useTranslation();
+  return <Seo title={t("blogPageSeoTitle")} />;
 };
 
 export const query = graphql`
@@ -50,4 +50,4 @@ export const query = graphql`
   } 
 `;
 
-export default BlogPage
+export default BlogPage;
