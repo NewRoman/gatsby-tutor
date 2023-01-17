@@ -21,6 +21,7 @@ const IndexPage = () => {
         alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
         src="../images/dog.jpg"
       />
+      <p>{t("This is bottom text of home page")}</p>
     </Layout>
   );
 };

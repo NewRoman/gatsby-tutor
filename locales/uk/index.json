@@ -1,5 +1,6 @@
 {
-  "homePageSeoTitle": "Головна title",
+  "This is bottom text of home page": "This is bottom text of home page",
   "homePageHeading": "Головна сторінка",
+  "homePageSeoTitle": "Головна title",
   "textPage": "Цей сайт зроблено на основі Gatsbyjs туроріалу"
 }

@@ -1,4 +1,4 @@
-const { defaultLanguage } = require('./languages');
+const { defaultLanguage, languages } = require('./languages');
 process.env.NODE_ENV = 'test';
 module.exports = {
   presets: ['babel-preset-gatsby'],
@@ -6,10 +6,11 @@ module.exports = {
     [
       'i18next-extract',
       {
+        locales: languages,
         // keySeparator: '.',
         // nsSeparator: null,
-        keyAsDefaultValue: [defaultLanguage],
-        useI18nextDefaultValue: [defaultLanguage],
+        keyAsDefaultValue: languages,
+        useI18nextDefaultValue: languages,
         // discardOldKeys: true,
         defaultNS: 'common',
         outputPath: 'locales/{{locale}}/{{ns}}.json',

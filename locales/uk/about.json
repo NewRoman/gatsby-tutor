@@ -1,5 +1,6 @@
 {
-  "aboutPageSeoTitle": "Про мене",
   "aboutPageHeading": "Сторінка про автора",
-  "textPage": "Привіт! Я пишаюсь тим що зміг зробити мій перший сайт за допомогою Gatsbyjs"
+  "aboutPageSeoTitle": "Про мене",
+  "textPage": "Привіт! Я пишаюсь тим що зміг зробити мій перший сайт за допомогою Gatsbyjs",
+  "test": ""
 }
