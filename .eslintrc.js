@@ -36,7 +36,7 @@ module.exports = {
     "array-bracket-spacing": "error",
     "array-callback-return": "error",
     "array-element-newline": 0,
-    "arrow-body-style": "error",
+    "arrow-body-style": 0,
     "arrow-parens": "error",
     "arrow-spacing": "error",
     "block-scoped-var": "error",
@@ -247,5 +247,6 @@ module.exports = {
     "wrap-regex": "error",
     "yield-star-spacing": "error",
     "yoda": "error",
+    "react/no-unescaped-entities": 0,
   },
 };

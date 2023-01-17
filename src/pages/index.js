@@ -1,61 +1,27 @@
-// i18next-extract-mark-ns-start index
 import * as React from "react";
-import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../layouts/layout";
 import Seo from "../components/seo";
 
 const IndexPage = () => {
-  const { t } = useTranslation();
 
   return (
-    <Layout pageTitle={t("homePageSeoTitle")}>
-      <p>{t("textPage")}</p>
+    <Layout pageTitle="Home page seo title">
+      <p>Hello this is home page of gatsby project, ready for multilanguage implementation</p>
       <StaticImage
-        alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
+        alt="Cat"
         src="../images/cat-funtik.jpeg"
       />
       <StaticImage
-        alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
+        alt="Dog"
         src="../images/dog.jpg"
       />
-      <p>{t("This is bottom text of home page")}</p>
+      <p>Now all phrases are hardcoded on each page and we will add some magic here soon</p>
     </Layout>
   );
 };
 
-export const Head = () => {
-  const { t } = useTranslation();
-  return <Seo title={t("homePageSeoTitle")} />;
-};
-
-export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: {ns: {in: ["common", "index"]}, language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          language
-          data
-        }
-      }
-    }
-  } 
-`;
+export const Head = () => <Seo title="Home page seo title" />;
 
 export default IndexPage;
-
-
-// based on react-intl
-// https://betterprogramming.pub/internationalization-with-gatsby-ae3991c39e92
-// based on react-i18n
-// https://dev.to/adrai/best-internationalization-for-gatsby-mkf
-// https://github.com/microapps/gatsby-plugin-react-i18next/tree/0cb31fe4e48dd5b1771efaf24c85ece5540aa084/example
-// how setup gatsby-node.js file
-// https://github.com/hello-nyxo/nyxo-website/blob/master/gatsby-node.js
-// translate .mdx files
-// https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n
-// transform mdx body into jsx
-// https://www.gatsbyjs.com/docs/how-to/routing/mdx/
