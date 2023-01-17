@@ -18,14 +18,14 @@ module.exports = {
         name: `locale`
       }
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: `blog`,
-    //     path: `${__dirname}/blog`,
-    //   }
-    // },
-    // "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      }
+    },
+    "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     {
       resolve: 'gatsby-plugin-react-i18next',

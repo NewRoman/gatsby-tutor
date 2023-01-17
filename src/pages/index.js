@@ -9,12 +9,17 @@ import Seo from "../components/seo";
 
 const IndexPage = () => {
   const { t } = useTranslation();
+
   return (
     <Layout pageTitle={t("homePageSeoTitle")}>
       <p>{t("textPage")}</p>
       <StaticImage
         alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
-        src="../images/clifford.jpg"
+        src="../images/cat-funtik.jpeg"
+      />
+      <StaticImage
+        alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
+        src="../images/dog.jpg"
       />
     </Layout>
   );
@@ -49,3 +54,7 @@ export default IndexPage;
 // https://github.com/microapps/gatsby-plugin-react-i18next/tree/0cb31fe4e48dd5b1771efaf24c85ece5540aa084/example
 // how setup gatsby-node.js file
 // https://github.com/hello-nyxo/nyxo-website/blob/master/gatsby-node.js
+// translate .mdx files
+// https://github.com/gatsbyjs/gatsby/tree/master/examples/using-i18n
+// transform mdx body into jsx
+// https://www.gatsbyjs.com/docs/how-to/routing/mdx/

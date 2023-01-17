@@ -1,32 +1,36 @@
 // i18next-extract-mark-ns-start blog
 import * as React from "react";
 import { graphql } from "gatsby";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useTranslation, Link } from "gatsby-plugin-react-i18next";
 
 import Layout from "../../layouts/layout";
 import Seo from "../../components/seo";
 
-const BlogPage = ({ data }) => {
+const BlogPage = (props) => {
   const { t } = useTranslation();
+
+  const { data: { blogs }, pageContext: { language } } = props;
+
   return (
     <Layout pageTitle={t("blogPageSeoTitle")}>
       <h3>
         {t("blogPostHeading")}
       </h3>
-      <p>{t("textPageBlog1")}</p>
-      <p>{t("textPageBlog2")}</p>
-      {/* {
-        data.allMdx.nodes.map(node => (
-          <article key={node.id}>
+      <p>{t("This is part 1 of blog page text")}</p>
+      <p>{t("This is part 2 of blog page text")}</p>
+
+      {
+        blogs.nodes.map((blog) => (
+          <article key={blog.id}>
             <h2>
-              <Link to={`/blog/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
+              <Link to={`/blog/${blog.frontmatter.slug}`} language={language}>
+                {blog.frontmatter.title}
               </Link>
             </h2>
-            <p>Posted: {node.frontmatter.date}</p>
+            <p>Posted: {blog.frontmatter.date}</p>
           </article>
         ))
-      } */}
+      }
     </Layout>
   );
 };
@@ -45,6 +49,16 @@ export const query = graphql`
           language
           data
         }
+      }
+    }
+    blogs: allMdx(filter: {fields: {locale: {eq: $language}}}, sort: { frontmatter: { date: ASC }}) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          slug
+        }
+        id
       }
     }
   } 
