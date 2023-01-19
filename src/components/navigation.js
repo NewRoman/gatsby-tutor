@@ -1,49 +1,40 @@
-
 // i18next-extract-mark-ns-start common
-import * as React from 'react'
-import {Link, useTranslation} from 'gatsby-plugin-react-i18next';
+import * as React from "react";
+import { Link, useTranslation } from "gatsby-plugin-react-i18next";
 
-// import { useStaticQuery, graphql } from 'gatsby'
+// замінюємо Link з gatsby на Link з gatsby-plugin-react-i18next
+// import { Link } from "gatsby";
 
 import {
   navLinks,
   navLinkItem,
-  navLinkText,
-} from '../layouts/layout.module.css'
+  navLinkText
+} from "../layouts/layout.module.css";
 
 const Navigation = () => {
-  const {t} = useTranslation();
-//   const data = useStaticQuery(graphql`
-//     query {
-//       site {
-//         siteMetadata {
-//           title
-//         }
-//       }
-//     }
-//   `)
-
+  const { t } = useTranslation();
+  
   return (
     <>
       <ul className={navLinks}>
         <li className={navLinkItem}>
-          <Link to='/' className={navLinkText}>
-            {t('mainMenu.home')}
+          <Link to="/" className={navLinkText}>
+            {t("Home")}
           </Link>
         </li>
         <li className={navLinkItem}>
-          <Link to='/about' className={navLinkText}>
-            {t('mainMenu.about')}
+          <Link to="/about" className={navLinkText}>
+            {t("About")}
           </Link>
         </li>
         <li className={navLinkItem}>
-          <Link to='/blog' className={navLinkText}>
-            {t('mainMenu.blog')}
+          <Link to="/blog" className={navLinkText}>
+            {t("Blog")}
           </Link>
         </li>
       </ul>
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

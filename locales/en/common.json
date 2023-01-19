@@ -1,10 +1,5 @@
-
 {
-  "en": "English",
-  "uk": "Українська",
-  "mainMenu": {
-    "home": "Home",
-    "about": "About",
-    "blog": "Blog"
-  }
+  "About": "About",
+  "Blog": "Blog",
+  "Home": "Home"
 }

@@ -1,5 +1,4 @@
 {
-    "aboutPageSeoTitle": "Про мене",
-    "aboutPageHeading": "Сторінка про автора",
-    "textPage": "Привіт! Я пишаюсь тим що зміг зробити мій перший сайт за допомогою Gatsbyjs"
+  "About page seo title": "Сторінка про мене",
+  "Hi! Are you ready to make some sort of magic to implement translations for all hardcoded phrases?": "Привіт! Чи готові ви до впровадження перекладів замість захардкоджених фраз?"
 }

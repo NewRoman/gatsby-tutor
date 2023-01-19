@@ -3,13 +3,13 @@ const { readdirSync, lstatSync } = require('fs')
 
 const defaultLanguage = 'en';
 
-// based on the directories get the language codes
+// грунтуючись на вкладених в locales директоріях створюємо масив з підтримуваних мов
 const languages = readdirSync(join(__dirname, 'locales')).filter((fileName) => {
   const joinedPath = join(join(__dirname, 'locales'), fileName)
   const isDirectory = lstatSync(joinedPath).isDirectory()
   return isDirectory
 });
-// defaultLanguage as first
+// defaultLanguage - мову за замовчуванням ставим на перше місце
 languages.splice(languages.indexOf(defaultLanguage), 1);
 languages.unshift(defaultLanguage);
 

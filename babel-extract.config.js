@@ -1,4 +1,4 @@
-const { defaultLanguage } = require('./languages');
+const { languages } = require('./languages');
 process.env.NODE_ENV = 'test';
 module.exports = {
   presets: ['babel-preset-gatsby'],
@@ -6,11 +6,9 @@ module.exports = {
     [
       'i18next-extract',
       {
-        // keySeparator: '.',
-        // nsSeparator: null,
-        keyAsDefaultValue: [defaultLanguage],
-        useI18nextDefaultValue: [defaultLanguage],
-        discardOldKeys: true,
+        locales: languages,
+        keyAsDefaultValue: languages,
+        useI18nextDefaultValue: languages,
         defaultNS: 'common',
         outputPath: 'locales/{{locale}}/{{ns}}.json',
         customTransComponents: [['gatsby-plugin-react-i18next', 'Trans']]

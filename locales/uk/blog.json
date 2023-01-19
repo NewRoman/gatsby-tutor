@@ -1,5 +1,6 @@
 {
-    "blogPageSeoTitle": "Мої блоги",
-    "blogPostHeading": "Блоги",
-    "textPage": "Опис сторінки з списком усіх блогів"
+  "Below you can see all blogs sorted by its language": "Нижче можна побачити список усіх блогів користувача",
+  "Blogs page seo title": "Тайтл для сторінки блогів",
+  "But initialy this list is empty": "Але наразі цей список пустий",
+  "Here is the list of blogs preview": "Це список блогів у вигляді превьюшок"
 }

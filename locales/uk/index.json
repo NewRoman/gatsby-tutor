@@ -1,5 +1,5 @@
 {
-    "homePageSeoTitle": "Головна title",
-    "homePageHeading": "Головна сторінка",
-    "textPage": "Цей сайт зроблено на основі Gatsbyjs туроріалу"
+  "Home page seo title": "Тайтл домашньої сторінки",
+  "Now we added t function for each phrase": "Функція t() додана ні усіх сторінках",
+  "Page is ready for multilanguage implementation": "Сторінка майже готова до імплементації багатомовності"
 }

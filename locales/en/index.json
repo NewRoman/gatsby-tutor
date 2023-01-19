@@ -1,5 +1,5 @@
 {
-    "homePageSeoTitle": "Home page title",
-    "homePageHeading": "Home page header",
-    "textPage": "I'm making this by following the Gatsby Tutorial."
+  "Home page seo title": "Home page seo title",
+  "Now we added t function for each phrase": "Now we added t function for each phrase",
+  "Page is ready for multilanguage implementation": "Page is ready for multilanguage implementation"
 }
