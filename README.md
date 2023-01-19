@@ -3,6 +3,29 @@
     <img alt="implement translation extractor" src="https://i18next-extract.netlify.app/imgs/babel-plugin-i18next-extract.png" width="60" />
   </a>
 </p>
+
+<p>
+  Фінальна версія імплементації багатомовності доступна за посиланням 
+  <a href="https://gatsbytutormain07670.gatsbyjs.io">Тицяй сюди</a>
+</p>
+
+<h1 align="center">
+  Add translation system for gatsby site
+</h1>
+
+
+## 🚀 tutorial
+
+1.  **Based on this tutorial.**
+
+    - [Tutorial](https://dev.to/adrai/best-internationalization-for-gatsby-mkf)
+
+    - [github project](https://github.com/microapps/gatsby-plugin-react-i18next/tree/0cb31fe4e48dd5b1771efaf24c85ece5540aa084/example)
+
+
+## 🚀 
+
+
 <h1 align="center">
   Implementation of translatoins extraction
 </h1>
