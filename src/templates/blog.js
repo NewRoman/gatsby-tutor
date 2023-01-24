@@ -7,24 +7,19 @@ import ReactMarkdown from "react-markdown";
 import Layout from "../layouts/layout";
 import Seo from "../components/seo";
 
-const MyH1 = (props) => <h1 style={{ color: "green" }} {...props} />;
-const MyH4 = (props) => <h4 style={{ color: "red" }} {...props} />;
-const MyParagraph = (props) => (
-  <p style={{ fontSize: "18px",
-    lineHeight: 1.6,
-    color: "blue" }} {...props} />
-);
-
 const components = {
-  h1: MyH1,
-  h4: MyH4,
-  p: MyParagraph,
+  h1: (props) => <h1 style={{ color: "green" }} {...props} />,
+  h4: (props) => <h4 style={{ color: "red" }} {...props} />,
+  p: (props) => (
+    <p style={{ fontSize: "18px",
+      lineHeight: 1.6,
+      color: "blue" }} {...props} />
+  ),
 };
 
 const Post = (props) => {
   const { data: { mdx } } = props;
   const image = getImage(mdx.frontmatter.hero_image);
-
   return (
     <Layout pageTitle="">
       <hr />
@@ -43,8 +38,6 @@ const Post = (props) => {
 export const Head = (props) => {
   return <Seo title={props.data.mdx.frontmatter.title} />;
 };
-
-
 export const query = graphql`
   query Post($language: String!, $slug: String!) {
     locales: allLocale(filter: {ns: {in: ["common"]}, language: {eq: $language}}) {
