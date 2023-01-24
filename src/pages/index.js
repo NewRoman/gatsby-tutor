@@ -1,14 +1,17 @@
+// i18next-extract-mark-ns-start index
 import * as React from "react";
+import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 import Layout from "../layouts/layout";
 import Seo from "../components/seo";
 
 const IndexPage = () => {
-
+  const { t } = useTranslation();
   return (
-    <Layout pageTitle="Home page seo title">
-      <p>Hello this is home page of gatsby project, ready for multilanguage implementation</p>
+    <Layout pageTitle={t("Home page seo title")}>
+      <p>{t("Page is ready for multilanguage implementation")}</p>
       <StaticImage
         alt="Cat"
         src="../images/cat-funtik.jpeg"
@@ -17,11 +20,25 @@ const IndexPage = () => {
         alt="Dog"
         src="../images/dog.jpg"
       />
-      <p>Now all phrases are hardcoded on each page and we will add some magic here soon</p>
+      <p>{t("Now we added t function for each phrase")}</p>
     </Layout>
   );
 };
 
 export const Head = () => <Seo title="Home page seo title" />;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {ns: {in: ["common", "index"]}, language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          language
+          data
+        }
+      }
+    }
+  } 
+`;
 
 export default IndexPage;

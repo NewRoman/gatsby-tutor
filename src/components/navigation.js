@@ -1,8 +1,9 @@
-
 // i18next-extract-mark-ns-start common
 import * as React from "react";
+import { Link, useTranslation } from "gatsby-plugin-react-i18next";
 
-import { Link } from "gatsby";
+// замінюємо Link з gatsby на Link з gatsby-plugin-react-i18next
+// import { Link } from "gatsby";
 
 import {
   navLinks,
@@ -11,23 +12,24 @@ import {
 } from "../layouts/layout.module.css";
 
 const Navigation = () => {
-
+  const { t } = useTranslation();
+  
   return (
     <>
       <ul className={navLinks}>
         <li className={navLinkItem}>
           <Link to="/" className={navLinkText}>
-            Home
+            {t("Home")}
           </Link>
         </li>
         <li className={navLinkItem}>
           <Link to="/about" className={navLinkText}>
-            About
+            {t("About")}
           </Link>
         </li>
         <li className={navLinkItem}>
           <Link to="/blog" className={navLinkText}>
-            Blog
+            {t("Blog")}
           </Link>
         </li>
       </ul>
